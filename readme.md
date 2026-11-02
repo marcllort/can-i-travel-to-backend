@@ -1,7 +1,7 @@
 # CanITravelTo
 
-![CI](https://github.com/marcllort/CanITravelTo_Backend/workflows/CI/badge.svg)
-![CD](https://github.com/marcllort/CanITravelTo_Backend/workflows/CD/badge.svg)
+![CI](https://github.com/marcllort/can-i-travel-to-backend/workflows/CI/badge.svg)
+![CD](https://github.com/marcllort/can-i-travel-to-backend/workflows/CD/badge.svg)
 
 - [CanITravelTo](#canitravelto)
   * [Motivation](#motivation)
@@ -64,11 +64,11 @@ It is a bit more technical, so in case you are not interested in that, just a fe
 
 ## Screenshots
 
-![Example Web](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Assets/webExample.gif)
+![Example Web](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Assets/webExample.gif)
 
-[Postman Collection](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Postman) call example:
+[Postman Collection](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Postman) call example:
 
-![Example Postman](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Assets/postmanExample.gif)
+![Example Postman](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Assets/postmanExample.gif)
 
 ## Database
 
@@ -184,15 +184,15 @@ There are two different Dockerfile's for each microservice, plus the docker-comp
 Performance wise, the difference between the compiled binary and the docker images has been negligible. Both are extremely fast, averaging around 53ms per request both. The backend itself, from when it receives the request till it sends back the response just takes 5 or 6ms.
 
 Backend "logic" (Docker) response time, 5ms (POST/GET), 12micros (OPTIONS):
-![Backend "logic" (Docker) response time](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Assets/backend-response-time.PNG)
+![Backend "logic" (Docker) response time](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Assets/backend-response-time.PNG)
 
 Binary response time, 51ms:
 
-![Binary response time](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Assets/binary-response-time.PNG)
+![Binary response time](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Assets/binary-response-time.PNG)
 
 Docker response time, 53ms:
 
-![Docker response time](https://github.com/marcllort/CanITravelTo_Backend/blob/master/Documentation/Assets/docker-response-time.PNG)
+![Docker response time](https://github.com/marcllort/can-i-travel-to-backend/blob/master/Documentation/Assets/docker-response-time.PNG)
 
 ### Kubernetes
 Even though is **REALLY overkill for this project**, due to the small amount of visitors received, I wanted to implement Kubernetes to handle the docker containers.
@@ -202,12 +202,12 @@ I have a simple implementation of the project running in Kubernetes in my local 
 
 ## Git
 I'm using a **mono-repo**, as its enables me to share the docker-compose, readme, credentials... Later on, during the CI/CD is much easier to deal, as there is only one git repository to pull and deal with.
-I also use the [Github Projects](https://github.com/marcllort/CanITravelTo_Backend/projects/1) feature, with the **Kanban methodology** to organize the new "stories" I have to develop/fix.
+I also use the [Github Projects](https://github.com/marcllort/can-i-travel-to-backend/projects/1) feature, with the **Kanban methodology** to organize the new "stories" I have to develop/fix.
 
 ### CI/CD
 I'm using **Github Actions**, to have everything centralized in Github. It uses a YML file, really similar to BitBucket/Gitlab or Jenkins.
 
-So far I have [two pipelines](https://github.com/marcllort/CanITravelTo_Backend/actions), the CI ([ci.yml](https://github.com/marcllort/CanITravelTo_Backend/blob/master/.github/workflows/ci.yml)) and CD ([cd.yml](https://github.com/marcllort/CanITravelTo_Backend/blob/master/.github/workflows/cd.yml)). 
+So far I have [two pipelines](https://github.com/marcllort/can-i-travel-to-backend/actions), the CI ([ci.yml](https://github.com/marcllort/can-i-travel-to-backend/blob/master/.github/workflows/ci.yml)) and CD ([cd.yml](https://github.com/marcllort/can-i-travel-to-backend/blob/master/.github/workflows/cd.yml)).
 
 In the CI pipeline the steps implemented are: build the two microservices, run the unit and integration/E2E tests of each microservice. If it fails it will notify me through an email.
 
